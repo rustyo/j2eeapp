@@ -7,6 +7,6 @@
 <title>LELKAM</title>
 </head>
 <body>
-	<h1> WELCOME MY FRIEND sad </h1>
+	<h1> WELCOME MY FRIEND </h1>
 </body>
 </html>

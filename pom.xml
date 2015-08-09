@@ -6,7 +6,7 @@
   <packaging>war</packaging>
   <name>J2EE Web Application Tutorial</name>
   
- 
+
   <dependencies>
   	<dependency>
   		<groupId>org.hibernate</groupId>
@@ -31,7 +31,7 @@
   	<dependency>
   		<groupId>org.springframework</groupId>
   		<artifactId>spring-orm</artifactId>
-  		<version>4.2.0.RELEASE</version>
+  		<version>4.1.7.RELEASE</version>
   	</dependency>
   	<dependency>
   		<groupId>com.oracle</groupId>

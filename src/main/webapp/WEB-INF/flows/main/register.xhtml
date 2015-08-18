@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/templates/general.xhtml">
+
+    <ui:define name="title">
+        <h:outputText value="REGISTER"/>
+    </ui:define>
+    <ui:define name="header">
+        <h:outputText value="Please sign up"/>
+    </ui:define>
+
+    <ui:define name="content">
+        <h:form id="register">
+            <p:fieldset styleClass="fieldset" legend="Registration Form">
+                <p:messages id="messages" />
+
+                <h:panelGrid id="regPanelGrid"
+                             style="margin: 0 auto; margin-top: 25px; text-align: right"
+                             cellspacing="8" columns="3">
+                    <h:panelGroup>
+                        <h:outputText value="First Name: " />
+                        <h:outputText style="color:red" value="*  " />
+                    </h:panelGroup>
+                    <p:inputText id="firstName" value="#{user.firstName}" required="true"
+                                 label="First Name" title="Enter your first name" />
+                    <p:tooltip for="firstName" styleClass="tooltip" showEvent="focus"
+                               hideEvent="blur" style="background-color: #5D5D5D" />
+
+                    <h:panelGroup>
+                        <h:outputText value="Last Name: " />
+                        <h:outputText style="color:red" value="*  " />
+                    </h:panelGroup>
+                    <p:inputText id="lastName" required="true" value="#{user.lastName}"
+                                 label="Last Name" title="Enter your last name" />
+                    <p:tooltip for="lastName" styleClass="tooltip" showEvent="focus"
+                               hideEvent="blur" style="background-color: #5D5D5D"/>
+
+                    <h:panelGroup>
+                        <h:outputText value="User Name: " />
+                        <h:outputText style="color:red" value="*  " />
+                    </h:panelGroup>
+                    <p:inputText id="userName" value="#{user.userName}" required="true"
+                                 label="User Name" title="Enter User Name" />
+                    <p:tooltip for="userName" styleClass="tooltip" showEvent="focus"
+                               hideEvent="blur" style="background-color: #5D5D5D"/>
+
+                    <h:panelGroup>
+                        <h:outputText value="Enter Password:" />
+                        <h:outputText style="color:red" value="*  " />
+                    </h:panelGroup>
+                    <p:password id="pass"  required="true" label="Password"  value="#{user.password}"
+                                title="Please enter a password!" feedback="true" match="passRepeat" >
+                        <f:validateLength minimum="5"/>
+                    </p:password>
+                    <h:outputText />
+
+                    <h:panelGroup>
+                        <h:outputText value="Repeat Password:" />
+                        <h:outputText style="color:red" value="*  " />
+                    </h:panelGroup>
+                    <p:password id="passRepeat"  required="true" label="Password"
+                                title="Please repeat the password!" />
+                    <h:outputText />
+
+                    <h:panelGroup>
+                        <h:outputText value="Phone Number"/>
+                    </h:panelGroup>
+                    <p:inputText id="phoneNumber"  required="false" label="Phone number" title="Enter phone number"
+                                 value="#{user.phoneNumber}"/>
+                    <p:tooltip for="phoneNumber" styleClass="tooltip" showEvent="focus"
+                               hideEvent="blur" style="background-color: #5D5D5D" />
+
+                    <h:panelGroup>
+                        <h:outputText value="Zip Code" />
+                    </h:panelGroup>
+                    <p:inputText id="zipCode" required="false" label="Zip code" title="Enter zip code"
+                            value="#{user.zipCode}"/>
+                    <p:tooltip for="zipCode" styleClass="tooltip" showEvent="focus"
+                               hideEvent="blur" style="background-color: #5D5D5D" />
+
+                    <p:commandButton id="backToSignIn" action="signInAgain" immediate="true" icon="ui-icon-arrowreturnhick-1-w" value="Sign in" />
+                    <p:commandButton id="registerUserButton" action="registerUser"
+                                     update="regPanelGrid,messages" icon="ui-icon-plus" value="Register" />
+
+
+                </h:panelGrid>
+            </p:fieldset>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

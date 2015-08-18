@@ -3,16 +3,21 @@ package com.info.rustyo.domain;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * Created by rustyo on 2015-08-17.
  */
 
+@Entity
+public  class UserEntity implements Serializable{
 
-public class UserEntity implements Serializable{
 
+    @Id
+    @GeneratedValue
     private int id;
+
     private String firstName;
     private String lastName;
     private String userName;
@@ -66,6 +71,15 @@ public class UserEntity implements Serializable{
     }
 
     public void setZipCode(String zipCode) {
+
         this.zipCode = zipCode;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
